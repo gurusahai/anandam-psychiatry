@@ -1,0 +1,10 @@
+﻿# Ignore backend files
+backend/
+*.php
+.htaccess
+
+# Ignore development files
+.idea/
+node_modules/
+
+# Keep only static files
