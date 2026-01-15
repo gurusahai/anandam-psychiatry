@@ -1,10 +1,23 @@
-﻿# Ignore backend files
-backend/
+﻿# Backend/Server files
 *.php
 .htaccess
+process-contact.php
+booking-api.php
+booking-modal.php
+maintenance.php
 
-# Ignore development files
+# Development files
 .idea/
 node_modules/
+package.json
+package-lock.json
 
-# Keep only static files
+# Documentation
+README.md
+sitemap.xml
+
+# Keep only these static files
+!index.html
+!style.css
+!script.js
+!assets/

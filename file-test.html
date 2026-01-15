@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>File Test</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>File Accessibility Test</h1>
+    
+    <div id="results">
+        <p>Testing file access...</p>
+    </div>
+    
+    <script>
+        const files = [
+            '/style.css',
+            '/script.js',
+            '/assets/images/logo.png',
+            '/test.html'
+        ];
+        
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '';
+        
+        async function testFile(url) {
+            try {
+                const response = await fetch(url);
+                const status = response.status;
+                const li = document.createElement('li');
+                
+                if (status === 200) {
+                    li.innerHTML = `<span class="success">✓</span> ${url} - OK (${status})`;
+                } else {
+                    li.innerHTML = `<span class="error">✗</span> ${url} - Failed (${status})`;
+                }
+                
+                resultsDiv.appendChild(li);
+            } catch (error) {
+                const li = document.createElement('li');
+                li.innerHTML = `<span class="error">✗</span> ${url} - Error: ${error.message}`;
+                resultsDiv.appendChild(li);
+            }
+        }
+        
+        // Test all files
+        files.forEach(testFile);
+    </script>
+</body>
+</html>
