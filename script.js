@@ -25,46 +25,6 @@
     };
 
     // -------------------------
-    // Toast Notification
-    // -------------------------
-    function showToast(message, type = "success") {
-        // Remove existing toasts
-        $$(".notification").forEach((n) => n.remove());
-
-        const el = document.createElement("div");
-        el.className = "notification";
-        el.classList.add(type === "error" ? "error" : "success");
-        el.setAttribute("role", "status");
-        el.setAttribute("aria-live", "polite");
-        el.textContent = message;
-
-        document.body.appendChild(el);
-
-        // Add some basic styles
-        el.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 16px 24px;
-            background: ${type === 'error' ? '#fee' : '#eff'};
-            color: ${type === 'error' ? '#c00' : '#333'};
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            z-index: 9999;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-            border: 1px solid ${type === 'error' ? '#fcc' : '#cce'};
-        `;
-
-        requestAnimationFrame(() => el.style.transform = 'translateX(0)');
-
-        setTimeout(() => {
-            el.style.transform = 'translateX(100%)';
-            setTimeout(() => el.remove(), 300);
-        }, 4000);
-    }
-
-    // -------------------------
     // Smooth scroll with navbar offset
     // -------------------------
     function scrollToHash(hash) {
@@ -262,74 +222,6 @@
                     behavior: prefersReducedMotion ? "auto" : "smooth"
                 });
                 backToTop.blur();
-            });
-        }
-
-        // ===== Contact form submission =====
-        const form = $("#contact-form");
-        if (form) {
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalHTML = submitBtn ? submitBtn.innerHTML : "";
-
-            form.addEventListener("submit", async (e) => {
-                e.preventDefault();
-
-                // Honeypot check
-                const websiteTrap = form.querySelector('input[name="website"]');
-                if (websiteTrap && websiteTrap.value.trim() !== "") {
-                    showToast("Submission blocked.", "error");
-                    return;
-                }
-
-                // Basic validation
-                const requiredFields = form.querySelectorAll('[required]');
-                let isValid = true;
-                requiredFields.forEach(field => {
-                    if (!field.value.trim()) {
-                        isValid = false;
-                        field.style.borderColor = '#f44336';
-                    } else {
-                        field.style.borderColor = '';
-                    }
-                });
-
-                if (!isValid) {
-                    showToast("Please fill all required fields.", "error");
-                    return;
-                }
-
-                try {
-                    if (submitBtn) {
-                        submitBtn.disabled = true;
-                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                    }
-
-                    // Simulate API call (replace with actual endpoint)
-                    await new Promise(resolve => setTimeout(resolve, 1500));
-
-                    // Success simulation
-                    form.reset();
-                    showToast("Appointment request sent! We'll contact you within 24 hours.", "success");
-
-                    // Scroll to top of form
-                    form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-                } catch (err) {
-                    console.error("Form error:", err);
-                    showToast("Couldn't send request. Please call us directly.", "error");
-                } finally {
-                    if (submitBtn) {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = originalHTML;
-                    }
-                }
-            });
-
-            // Clear validation styles on input
-            form.querySelectorAll('input, textarea, select').forEach(input => {
-                input.addEventListener('input', () => {
-                    input.style.borderColor = '';
-                });
             });
         }
 

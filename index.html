@@ -35,6 +35,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -598,66 +599,31 @@
                     </div>
                 </div>
 
-                <!-- Appointment Form -->
-                <div class="appointment-form-container">
+                <!-- Appointment Booking -->
+                <div class="appointment-form-container calendly-booking-container">
                     <div class="form-header">
                         <h3>Book Appointment Online</h3>
-                        <p>Fill this form and we'll get back to you within 24 hours</p>
+                        <p>Choose an available time below. Calendly will collect your booking details and send the confirmation.</p>
                     </div>
 
-                    <form id="contact-form" method="post" action="./process-contact.php" novalidate>
-                        <div class="hidden" aria-hidden="true">
-                            <label for="website">Website</label>
-                            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
-                        </div>
+                    <div class="calendly-actions">
+                        <a href="https://calendly.com/kumar-dump2/30min"
+                           class="btn btn-primary btn-glow"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fas fa-calendar-check" aria-hidden="true"></i> Open Calendly
+                        </a>
+                        <p class="form-note">
+                            <i class="fas fa-info-circle" aria-hidden="true"></i>
+                            If the scheduler does not load, use the button above. For emergencies, please contact emergency services immediately.
+                        </p>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input id="name" name="name" type="text" placeholder="Your name" required />
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone">Phone Number *</label>
-                                <input id="phone" name="phone" type="tel" placeholder="+91 XXXXX XXXXX" required />
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input id="email" name="email" type="email" placeholder="you@example.com" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="service">Service Interested In *</label>
-                            <select id="service" name="service" required>
-                                <option value="">Select a service</option>
-                                <option value="psychiatry">Psychiatry Consultation</option>
-                                <option value="therapy">Therapy/Counselling</option>
-                                <option value="online">Online Consultation</option>
-                                <option value="follow-up">Follow-up Appointment</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="preferred-date">Preferred Date (Optional)</label>
-                            <input id="preferred-date" name="preferred-date" type="date" />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Brief Concern *</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Briefly describe what brings you here..." required></textarea>
-                        </div>
-
-                        <div class="form-submit">
-                            <button type="submit" class="btn btn-primary btn-glow">
-                                <i class="fas fa-paper-plane"></i> Submit Appointment Request
-                            </button>
-                            <p class="form-note">
-                                <i class="fas fa-info-circle"></i> For emergencies, please contact emergency services immediately.
-                            </p>
-                        </div>
-                    </form>
+                    <div class="calendly-embed-shell" aria-label="Calendly appointment scheduler">
+                        <div class="calendly-inline-widget"
+                             data-url="https://calendly.com/kumar-dump2/30min?hide_gdpr_banner=1"
+                             style="min-width:320px;"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -712,6 +678,7 @@
 </button>
 
 <!-- JavaScript -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script src="/script.js" defer></script>
 </body>
 </html>

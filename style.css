@@ -1491,7 +1491,7 @@ summary:focus-visible {
     color: var(--primary-dark);
 }
 
-/* Appointment Form */
+/* Appointment Booking */
 .appointment-form-container {
     background: white;
     border-radius: var(--radius-xl);
@@ -1515,90 +1515,23 @@ summary:focus-visible {
     font-size: 1rem;
 }
 
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--text-dark);
-    font-size: 0.95rem;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 14px 16px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    color: var(--text-dark);
-    background: white;
-    transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(29, 107, 115, 0.1);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: var(--text-light);
-}
-
-.form-group textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.form-group select {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%231d6b73' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    background-size: 16px;
-    padding-right: 44px;
-}
-
-.hidden {
-    position: absolute !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
-    clip: rect(0, 0, 0, 0) !important;
-    white-space: nowrap !important;
-    border: 0 !important;
-}
-
-.form-submit {
-    margin-top: 30px;
-}
-
-.form-submit .btn {
-    width: 100%;
+.calendly-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 16px;
-    font-size: 1.1rem;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.calendly-actions .btn {
+    min-width: 220px;
+    justify-content: center;
 }
 
 .form-note {
-    margin-top: 16px;
+    max-width: 640px;
+    margin: 0;
     font-size: 0.9rem;
     color: var(--text-medium);
     text-align: center;
@@ -1608,6 +1541,19 @@ summary:focus-visible {
 .form-note i {
     color: var(--primary);
     margin-right: 6px;
+}
+
+.calendly-embed-shell {
+    min-height: 720px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: white;
+}
+
+.calendly-inline-widget {
+    width: 100%;
+    height: 720px;
 }
 
 /* Contact Section Responsive */
@@ -1628,11 +1574,6 @@ summary:focus-visible {
         gap: 15px;
     }
 
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
     .contact-card {
         padding: 20px;
     }
@@ -1645,6 +1586,16 @@ summary:focus-visible {
 
     .appointment-form-container {
         padding: 24px;
+    }
+
+    .calendly-actions .btn {
+        width: 100%;
+    }
+
+    .calendly-embed-shell,
+    .calendly-inline-widget {
+        min-height: 780px;
+        height: 780px;
     }
 }
 
