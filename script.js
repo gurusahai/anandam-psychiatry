@@ -256,12 +256,12 @@
             }, observerOptions);
 
             // Observe all animated elements
-            $$(".service-card, .story-card, .team-member, .contact-method").forEach(el => {
+            $$(".service-card, .story-card, .team-member, .contact-card").forEach(el => {
                 observer.observe(el);
             });
         } else {
             // Fallback for older browsers
-            $$(".service-card, .story-card, .team-member, .contact-method").forEach(el => {
+            $$(".service-card, .story-card, .team-member, .contact-card").forEach(el => {
                 el.style.opacity = "1";
                 el.style.transform = "translateY(0)";
             });

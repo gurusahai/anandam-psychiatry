@@ -37,12 +37,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Add these meta tags -->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- CSS -->
     <link rel="stylesheet" href="/style.css" type="text/css">
 
@@ -52,7 +46,9 @@
             .no-js .service-card,
             .no-js .story-card,
             .no-js .psychologist-card,
-            .no-js .doctor-card {
+            .no-js .doctor-card,
+            .no-js .team-member,
+            .no-js .contact-card {
                 opacity: 1 !important;
                 transform: none !important;
             }
@@ -129,13 +125,13 @@
 
         <!-- Navigation Content -->
         <div class="nav-right">
-            <ul id="nav-menu" class="nav-menu" role="list">
-                <li role="none"><a class="nav-link" href="#doctor" role="menuitem">About Dr. Sharma</a></li>
-                <li role="none"><a class="nav-link" href="#team" role="menuitem">Our Team</a></li>
-                <li role="none"><a class="nav-link" href="#services" role="menuitem">Our Services</a></li>
-                <li role="none"><a class="nav-link" href="#faq" role="menuitem">FAQs</a></li>
-                <li role="none" class="nav-cta">
-                    <a class="nav-button" href="#contact" role="menuitem">
+            <ul id="nav-menu" class="nav-menu">
+                <li><a class="nav-link" href="#doctor">About Dr. Sharma</a></li>
+                <li><a class="nav-link" href="#team">Our Team</a></li>
+                <li><a class="nav-link" href="#services">Our Services</a></li>
+                <li><a class="nav-link" href="#faq">FAQs</a></li>
+                <li class="nav-cta">
+                    <a class="nav-button" href="#contact">
                         <span class="button-icon"> </span>
                         <span class="button-text">Book Appointment</span>
                     </a>
@@ -221,7 +217,7 @@
 
             <div class="doctor-profile">
                 <div class="doctor-image">
-                    <img src="/assets/images/dr-sharma.png" alt="Dr. Srikant Sharma"
+                    <img src="/assets/images/dr-sharma.png"
                          alt="Dr. Srikant Sharma, Psychiatrist at Anandam Psychiatry Centre"
                          loading="lazy"
                          width="400"
@@ -302,7 +298,7 @@
                 <!-- Psychiatrist -->
                 <article class="team-member">
                     <div class="member-image">
-                        <img src="/assets/images/dr-sharma.png" alt="Dr. Srikant Sharma"
+                        <img src="/assets/images/dr-sharma.png"
                              alt="Dr. Srikant Sharma, Psychiatrist at Anandam Psychiatry Centre"
                              loading="lazy"
                              width="300"
@@ -327,7 +323,7 @@
                 <!-- Clinical Psychologist -->
                 <article class="team-member psychologist">
                     <div class="member-image">
-                        <img src="/assets/images/clinical-psychologist.png" alt="Clinical Psychologist"
+                        <img src="/assets/images/clinical-psychologist.png"
                              alt="Clinical Psychologist at Anandam Psychiatry Centre"
                              loading="lazy"
                              width="300"
@@ -352,7 +348,7 @@
                 <!-- Counselling Psychologist -->
                 <article class="team-member psychologist">
                     <div class="member-image">
-                        <img src="/assets/images/counselling-psychologist.png" alt="Counselling Psychologist"
+                        <img src="/assets/images/counselling-psychologist.png"
                              alt="Counselling Psychologist at Anandam Psychiatry Centre"
                              loading="lazy"
                              width="300"
@@ -554,7 +550,7 @@
                             <h4>Visit Our Clinic</h4>
                             <p>4/1, First Floor, Near Metro Pillar 172</p>
                             <p>East Patel Nagar, New Delhi â€“ 110008</p>
-                            <a href="https://maps.google.com/maps?q=4%2F1+East+Patel+Nagar+110008" target="_blank" class="card-link">
+                            <a href="https://maps.google.com/maps?q=4%2F1+East+Patel+Nagar+110008" target="_blank" rel="noopener noreferrer" class="card-link">
                                 <i class="fas fa-directions"></i> Get Directions
                             </a>
                         </div>
@@ -592,7 +588,7 @@
                         <div class="card-content">
                             <h4>Message on WhatsApp</h4>
                             <p>Quick responses during clinic hours</p>
-                            <a href="https://wa.me/919582582707?text=Hi%2C%20I%20want%20to%20book%20an%20appointment%20at%20Anandam%20Psychiatry%20Centre." target="_blank" class="card-link">
+                            <a href="https://wa.me/919582582707?text=Hi%2C%20I%20want%20to%20book%20an%20appointment%20at%20Anandam%20Psychiatry%20Centre." target="_blank" rel="noopener noreferrer" class="card-link">
                                 <i class="fab fa-whatsapp"></i> Chat Now
                             </a>
                         </div>
@@ -621,8 +617,7 @@
 
                     <div class="calendly-embed-shell" aria-label="Calendly appointment scheduler">
                         <div class="calendly-inline-widget"
-                             data-url="https://calendly.com/kumar-dump2/30min?hide_gdpr_banner=1"
-                             style="min-width:320px;"></div>
+                             data-url="https://calendly.com/kumar-dump2/30min?hide_gdpr_banner=1"></div>
                     </div>
                 </div>
             </div>
