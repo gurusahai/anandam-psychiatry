@@ -1,23 +1,21 @@
-﻿# Backend/Server files
-*.php
-.htaccess
-process-contact.php
-booking-api.php
-booking-modal.php
-maintenance.php
-
-# Development files
+# Local/editor files
 .idea/
+.vscode/
+
+# Dependencies and package manager files if introduced locally
 node_modules/
-package.json
 package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
-# Documentation
-README.md
-sitemap.xml
+# Legacy backend files are not part of the static Calendly site
+backend/
+*.php
+*.log
 
-# Keep only these static files
-!index.html
-!style.css
-!script.js
-!assets/
+# Local documentation and audit files
+Anandam.md
+
+# Development-only pages
+file-test.html
+test.html

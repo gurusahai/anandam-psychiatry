@@ -1,0 +1,10 @@
+# Local/editor files
+.idea/
+.vscode/
+
+# Dependencies and temporary files
+node_modules/
+*.log
+
+# Local audit/output files
+Anandam.md
